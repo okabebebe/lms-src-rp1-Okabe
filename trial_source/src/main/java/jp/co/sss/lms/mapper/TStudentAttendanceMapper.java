@@ -1,5 +1,6 @@
 package jp.co.sss.lms.mapper;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -64,5 +65,7 @@ public interface TStudentAttendanceMapper {
 	 * @return 更新結果
 	 */
 	Boolean update(TStudentAttendance tStudentAttendance);
+	
+	TStudentAttendance findByTimeDate (Integer lmsUserId, Short deleteFlg, Date trainingDate, @Param("today") LocalDate today);
 
 }
