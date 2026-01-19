@@ -91,15 +91,15 @@
 		FROM 
 			t_student_attendance
 		WHERE 
-			lms_user_id = #{lmsUserId},
+			lms_user_id = #{lmsUserId}
 		AND
-			deleteFlg =  #{deleteFlg},
+			delete_flg =  #{deleteFlg}
 		AND
-			Date trainingDate &lt; #{today}, 
+			training_date &lt; #{today}
 		AND		
-			Short status != 1,
+			status != 1
 		AND
-			(trainingStartTime IS NULL OR trainingEndTime IS NULL)
+			(training_start_time IS NULL OR training_end_time IS NULL)
 	</select>
 
 </mapper>
