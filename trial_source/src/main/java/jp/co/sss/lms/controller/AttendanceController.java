@@ -51,7 +51,6 @@ public class AttendanceController {
 		
 			model.addAttribute("alert", alertNum);
 		
-		
 		return "attendance/detail";
 	}
 
