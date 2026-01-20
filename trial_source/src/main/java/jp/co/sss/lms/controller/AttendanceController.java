@@ -46,7 +46,12 @@ public class AttendanceController {
 		List<AttendanceManagementDto> attendanceManagementDtoList = studentAttendanceService
 				.getAttendanceManagement(loginUserDto.getCourseId(), loginUserDto.getLmsUserId());
 		model.addAttribute("attendanceManagementDtoList", attendanceManagementDtoList);
-
+		
+		Integer alertNum = studentAttendanceService.getAlert();	
+		
+			model.addAttribute("alert", alertNum);
+		
+		
 		return "attendance/detail";
 	}
 
