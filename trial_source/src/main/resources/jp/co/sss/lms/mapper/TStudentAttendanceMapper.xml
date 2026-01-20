@@ -86,20 +86,20 @@
 		WHERE student_attendance_id = #{studentAttendanceId}
 	</update>
 	
-	<select id="findByTimeDate" resultType="jp.co.sss.lms.entity.TStudentAttendance">
+	<select id="notEnterCount" resultType="Integer">
 		SELECT COUNT(*)
 		FROM 
-			t_student_attendance
-		WHERE 
-			lms_user_id = #{lmsUserId}
+			t_student_attendance 
+		WHERE
+			 lms_user_id = #{lmsUserId} 
 		AND
-			delete_flg =  #{deleteFlg}
-		AND
-			training_date &lt; #{today}
-		AND		
-			status != 1
-		AND
-			(training_start_time IS NULL OR training_end_time IS NULL)
+			delete_flg = #{deleteFlg} 
+		AND 
+			training_date &lt; CAST(#{today} AS DATE) 
+		AND 
+			status != 1 
+		AND 
+			(t_student_attendance.training_start_time='' OR t_student_attendance.training_end_time='' OR t_student_attendance.training_start_time IS NULL OR t_student_attendance.training_end_time IS NULL)
 	</select>
 
 </mapper>
