@@ -2,7 +2,6 @@ package jp.co.sss.lms.service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -337,22 +336,16 @@ public class StudentAttendanceService {
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
 	
-	public String getAlert(Integer lmsUserId, Short deleteFlg) {
+	public Integer getAlert() {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-		String todayFormat = sdf.format(new Date());
+		Date date = new Date();
+		String today = sdf.format(date);
 		
-		LocalDate today = LocalDate.now();
-		
-		Integer count = tStudentAttendanceMapper.findByTimeDate(lmsUserId, deleteFlg, today);
-		int countNum = (count != null) ? count:0;
-		
-		if(0 < countNum) {
-				return "過去日の勤怠に未入力があります";
-			} else {
-				return null;
-			}	
-		
+		Integer count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(),0, today);
+	
+		return count;
+
 	}
 	
 	
