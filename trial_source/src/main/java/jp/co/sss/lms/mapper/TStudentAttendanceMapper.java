@@ -67,6 +67,7 @@ public interface TStudentAttendanceMapper {
 	
 	
 		
-	Integer notEnterCount (@Param("lmsUserId")Integer lmsUserId, @Param("deleteFlg") int i, @Param("today") String today);
+	Integer notEnterCount (@Param("lmsUserId")Integer lmsUserId, @Param("deleteFlg") int deleteFlg, @Param("today") String today);
+	//int i
 
 }
