@@ -47,9 +47,8 @@ public class AttendanceController {
 				.getAttendanceManagement(loginUserDto.getCourseId(), loginUserDto.getLmsUserId());
 		model.addAttribute("attendanceManagementDtoList", attendanceManagementDtoList);
 		
-		//タスク番号　名前　何をしたのか（すでにあるメソッド）
-		boolean attendanceCheck = studentAttendanceService.attendanceCheck();	
-		
+		//岡部遥-Task.25-attendanceCheck()で取得したtrueかfalseの値を受け取り、trueならスコープ変数「showDialog」へ値を渡す
+		boolean attendanceCheck = studentAttendanceService.attendanceCheck();			
 		if(attendanceCheck == true) {
 			model.addAttribute("showDialog", attendanceCheck);
 		}
