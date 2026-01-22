@@ -261,7 +261,7 @@ public class StudentAttendanceService {
 
 	/**
 	 * 勤怠登録・更新処理
-	 *(@author)
+	 *
 	 * @param attendanceForm
 	 * @return 完了メッセージ
 	 * @throws ParseException
@@ -335,12 +335,14 @@ public class StudentAttendanceService {
 		// 完了メッセージ
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
+		
 	
-	
-	
-	
-	
-	
+	/**
+	 * 勤怠情報（受講生入力）勤怠情報（受講生入力）未入力件数0か0以外か判定
+	 * @author 岡部遥 – Task.25
+	 * @param 
+	 * @return trueまたはfalse
+	 */	
 	public boolean attendanceCheck() {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
