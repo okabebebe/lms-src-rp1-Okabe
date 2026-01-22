@@ -99,7 +99,7 @@
 		AND 
 			status != 1 
 		AND 
-			(t_student_attendance.training_start_time='' OR t_student_attendance.training_end_time='' OR t_student_attendance.training_start_time IS NULL OR t_student_attendance.training_end_time IS NULL)
+			(training_start_time='' OR training_end_time='' OR training_start_time IS NULL OR training_end_time IS NULL)
 	</select>
 
 </mapper>
