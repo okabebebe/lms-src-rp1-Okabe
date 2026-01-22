@@ -70,7 +70,7 @@
 					</th:block>
 				</tbody>
 			</table>
-		<input type="hidden" id="alertNum" th:value="${alert}">
+		<input type="hidden" id="showDialog" th:value="${showDialog}">
 		</div>
 	</div>
 
@@ -91,7 +91,7 @@
 	
 	<script>
 		window.onload=function(){
-			if($('#alertNum').val()>0){
+			if($('#showDialog')){
 				alert("過去日の勤怠に未入力があります。")
 			}
 		}
