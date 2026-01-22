@@ -50,7 +50,7 @@ public class AttendanceController {
 		//タスク番号　名前　何をしたのか（すでにあるメソッド）
 		boolean attendanceCheck = studentAttendanceService.attendanceCheck();	
 		
-		if(attendanceCheck) {
+		if(attendanceCheck == true) {
 			model.addAttribute("showDialog", attendanceCheck);
 		}
 				
