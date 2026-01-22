@@ -47,10 +47,13 @@ public class AttendanceController {
 				.getAttendanceManagement(loginUserDto.getCourseId(), loginUserDto.getLmsUserId());
 		model.addAttribute("attendanceManagementDtoList", attendanceManagementDtoList);
 		
-		Integer alertNum = studentAttendanceService.getAlert();	
+		//タスク番号　名前　何をしたのか（すでにあるメソッド）
+		boolean attendanceCheck = studentAttendanceService.attendanceCheck();	
 		
-			model.addAttribute("alert", alertNum);
-		
+		if(attendanceCheck) {
+			model.addAttribute("showDialog", attendanceCheck);
+		}
+				
 		return "attendance/detail";
 	}
 
