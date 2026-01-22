@@ -261,7 +261,7 @@ public class StudentAttendanceService {
 
 	/**
 	 * 勤怠登録・更新処理
-	 * 
+	 *(@author)
 	 * @param attendanceForm
 	 * @return 完了メッセージ
 	 * @throws ParseException
@@ -336,19 +336,25 @@ public class StudentAttendanceService {
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
 	
-	public Integer getAlert() {
+	
+	
+	
+	
+	
+	public boolean attendanceCheck() {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		Date date = new Date();
 		String today = sdf.format(date);
 		
-		Integer count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(),0, today);
+		Integer count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(),Constants.DB_FLG_FALSE,today);
+		
+		if(count>0) {
+			return true;
+		} else {
+			return false;
+		}
 	
-		return count;
-
 	}
 	
-	
-	
-
 }
