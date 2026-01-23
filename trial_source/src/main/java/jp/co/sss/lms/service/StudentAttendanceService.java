@@ -44,7 +44,6 @@ public class StudentAttendanceService {
 	private LoginUserDto loginUserDto;
 	@Autowired
 	private TStudentAttendanceMapper tStudentAttendanceMapper;
-	
 
 	/**
 	 * 勤怠一覧情報取得
@@ -335,28 +334,28 @@ public class StudentAttendanceService {
 		// 完了メッセージ
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
-		
-	
+
 	/**
 	 * 勤怠情報（受講生入力）勤怠情報（受講生入力）未入力件数0か0以外か判定
 	 * @author 岡部遥 – Task.25
 	 * @param 
 	 * @return trueまたはfalse
-	 */	
+	 */
 	public boolean attendanceCheck() {
-		
+
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		Date date = new Date();
 		String today = sdf.format(date);
-		
-		Integer count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(),Constants.DB_FLG_FALSE,today);
-		
-		if(count>0) {
+
+		Integer count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(), Constants.DB_FLG_FALSE,
+				today);
+
+		if (count > 0) {
 			return true;
 		} else {
 			return false;
 		}
-	
+
 	}
-	
+
 }
