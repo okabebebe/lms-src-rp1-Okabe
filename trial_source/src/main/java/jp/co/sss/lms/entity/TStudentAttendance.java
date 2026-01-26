@@ -40,5 +40,10 @@ public class TStudentAttendance {
 	private Date lastModifiedDate;
 	/** 中抜け時間 */
 	private Integer blankTime;
+	
+	public String trainingStartTimeHour;
+	public String trainingStartTimeMinute;
+	public String trainingEndTimeHour;
+	public String trainingEndTimeMinute;
 
 }
