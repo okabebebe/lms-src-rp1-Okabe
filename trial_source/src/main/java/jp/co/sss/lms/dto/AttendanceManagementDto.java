@@ -22,10 +22,13 @@ public class AttendanceManagementDto extends StudentAttendanceDto {
 	/** セクション名 */
 	private String sectionName;
 	
-	
+	/** 岡部遥-Task.26-出勤時間の時 */
 	private String trainingStartHour;
+	/** 岡部遥-Task.26-出勤時間の分 */
 	private String trainingStartMinute;
+	/** 岡部遥-Task.26-退勤時間の時 */
 	private String trainingEndtHour;
+	/** 岡部遥-Task.26-退勤時間の分 */
 	private String trainingEndMinute;
 
 }
