@@ -56,39 +56,58 @@
 								<td class="w300">[[${dailyAttendanceForm.sectionName}]]</td>		
 																
 								<td class="w70">
-									<select th:name="|attendanceList[${stat.index}].trainingStartTimeHour|" class="form-control" >
+									
+									<!-- 岡部遥-Task.26-出勤時間手入力フォームからプルダウンにて時間のみの登録フォームへ修正 -->
+									<select th:name="|attendanceList[${stat.index}].trainingStartTimeHour|" class="form-control" >									
 										<option th:each="trainingStartTimeHour:${attendanceForm.hourMap}" th:value="${trainingStartTimeHour.key}" th:inlne="text" class="form-control"
-										th:selected="${trainingStartTimeHour.key == dailyAttendanceForm.trainingStartTimeHour}">[[${trainingStartTimeHour.value}]]</option>
+										th:selected="${trainingStartTimeHour.key == dailyAttendanceForm.trainingStartTimeHour}">
+											[[${trainingStartTimeHour.value}]]
+										</option>
 									</select>
 									
 								</td>
+								
+								<!-- 岡部遥-Task.26-画面を整える「：」追記 -->
 								<td>:</td>
 								
 								<td class="w70">
-									<select th:name="|attendanceList[${stat.index}].trainingStartTimeHour|"  class="form-control">
+									
+									<!-- 岡部遥-Task.26-出勤時間手入力フォームからプルダウンにて分数のみの登録フォームへ修正 -->
+									<select th:name="|attendanceList[${stat.index}].trainingStartTimeMinute|"  class="form-control">										
 										<option th:each="trainingStartTimeMinute:${attendanceForm.minuteMap}" th:value="${trainingStartTimeMinute.key}" th:inlne="text"class="form-control"
-										th:selected="${trainingStartTimeMinute.key == dailyAttendanceForm.trainingStartTimeHour}">[[${trainingStartTimeMinute.value}]]</option>></option>
+										th:selected="${trainingStartTimeMinute.key == dailyAttendanceForm.trainingStartTimeHour}">
+											[[${trainingStartTimeMinute.value}]]
+										</option>
 									</select>
 									
 								</td>
 								
 								<td class="w70">
-									<select th:name="|attendanceList[${stat.index}].trainingEndTimeHour|"  class="form-control">
+									
+									<!-- 岡部遥-Task.26-退勤時間手入力フォームからプルダウンにて時間のみの登録フォームへ修正 -->
+									<select th:name="|attendanceList[${stat.index}].trainingEndTimeHour|"  class="form-control">										
 										<option th:each="trainingEndTimeHour:${attendanceForm.hourMap}" th:value="${trainingEndTimeHour.key}" th:inlne="text" class="form-control"
-										th:selected="${trainingEndTimeHour.key == dailyAttendanceForm.trainingEndTimeHour}">[[${trainingEndTimeHour.value}]]</option>></option>
+										th:selected="${trainingEndTimeHour.key == dailyAttendanceForm.trainingEndTimeHour}">
+											[[${trainingEndTimeHour.value}]]
+										</option>
 									</select>
+									
 								</td>
 								
+								<!-- 岡部遥-Task.26-画面を整える「：」追記 -->
 								<td>:</td>								
 								
 								<td class="w70">
-									<select th:name="|attendanceList[${stat.index}].trainingStartTimeHour|" class="form-control">
+									
+									<!-- 岡部遥-Task.26-退勤時間手入力フォームからプルダウンにて分数のみの登録フォームへ修正 -->
+									<select th:name="|attendanceList[${stat.index}].trainingEndTimeMinute|" class="form-control">										
 										<option th:each="trainingEndTimeMinute:${attendanceForm.minuteMap}" th:value="${trainingEndTimeMinute.key}" th:inlne="text" class="form-control"
-										th:selected="${trainingEndTimeMinute.key == dailyAttendanceForm.trainingEndTimeMinute}">[[${trainingEndTimeMinute.value}]]</option>>
+										th:selected="${trainingEndTimeMinute.key == dailyAttendanceForm.trainingEndTimeMinute}">
+											[[${trainingEndTimeMinute.value}]]
+										</option>
 									</select>	
+									
 								</td>								
-								
-								
 								
 								<td class="w80">
 									<select th:name="|attendanceList[${stat.index}].blankTime|" class="form-control">
