@@ -41,9 +41,13 @@ public class TStudentAttendance {
 	/** 中抜け時間 */
 	private Integer blankTime;
 	
+	/** 岡部遥-Task.26-出勤時間の時 */
 	public String trainingStartTimeHour;
+	/** 岡部遥-Task.26-出勤時間の分 */
 	public String trainingStartTimeMinute;
+	/** 岡部遥-Task.26-退勤時間の時 */
 	public String trainingEndTimeHour;
+	/** 岡部遥-Task.26-退勤時間の分 */
 	public String trainingEndTimeMinute;
 
 }
