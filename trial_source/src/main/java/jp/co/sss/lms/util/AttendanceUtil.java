@@ -146,5 +146,50 @@ public class AttendanceUtil {
 		}
 		return false;
 	}
+	
+	
+	
+	/**
+	 * Task.26-選択肢用の時間マップを取得
+	 * @author 岡部
+	 * @param start
+	 * @param end
+	 * @return 選択肢用の時間マップ、分マップを取得
+	 */	
+	public LinkedHashMap<String, String> setTime(int start, int end){
+		LinkedHashMap<String, String> timeMap = new LinkedHashMap<>();
+		
+		timeMap.put("", "");
+		
+		for(int i=start; i<=end; i++) {
+			
+			String timeVal = String.format("%02d",i);
+			
+			timeMap.put(timeVal, timeVal);				
+		}
+		return timeMap;	
+	}
+	
+	
+	/**
+	 * Task.26-出勤時間の時間を抜き出す
+	 * @author 岡部
+	 * @param hour
+	 * @return DBのデータが入っているDTOから抜き出した出勤、または退勤時間の時間
+	 */	
+	public String setHour(String hour) {
+		return (hour != null && hour.length()>=2)?hour.substring(0,2):"00";
+	}
+	
+	
+	/**
+	 * Task.26-出勤時間の分数を抜き出す
+	 * @author 岡部
+	 * @param minute
+	 * @return DBのデータが入っているDTOから抜き出した出勤、または退勤時間時間の分数
+	 */	
+	public String setMinute(String minute) {
+		return (minute != null && minute.length()>=5)?minute.substring(3,5):"00";
+	}
 
 }
