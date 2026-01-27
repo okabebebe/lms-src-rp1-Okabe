@@ -342,7 +342,7 @@ public class StudentAttendanceService {
 				tStudentAttendance.setTrainingStartTime(trainingStartTime.getFormattedString());
 			} else {
 				tStudentAttendance.setTrainingStartTime(null);
-				tStudentAttendance.setStatus(null);
+				tStudentAttendance.setStatus((short) 0);
 			}
 							
 			
@@ -355,7 +355,7 @@ public class StudentAttendanceService {
 				tStudentAttendance.setTrainingEndTime(trainingEndTime.getFormattedString());
 			} else {
 				tStudentAttendance.setTrainingEndTime(null);
-				tStudentAttendance.setStatus(null);
+				tStudentAttendance.setStatus((short) 0);
 			}
 				
 			
