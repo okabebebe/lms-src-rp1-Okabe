@@ -150,8 +150,8 @@ public class AttendanceUtil {
 	
 	
 	/**
-	 * Task.26-選択肢用の時間マップを取得
-	 * @author 岡部
+	 * 選択肢用の時間マップを取得
+	 * @author 岡部-Task.26
 	 * @param start
 	 * @param end
 	 * @return 選択肢用の時間マップ、分マップを取得
@@ -172,8 +172,8 @@ public class AttendanceUtil {
 	
 	
 	/**
-	 * Task.26-出勤時間の時間を抜き出す
-	 * @author 岡部
+	 * 出勤時間の時間を抜き出す
+	 * @author 岡部-Task.26
 	 * @param hour
 	 * @return DBのデータが入っているDTOから抜き出した出勤、または退勤時間の時間
 	 */	
@@ -183,8 +183,8 @@ public class AttendanceUtil {
 	
 	
 	/**
-	 * Task.26-出勤時間の分数を抜き出す
-	 * @author 岡部
+	 * 出勤時間の分数を抜き出す
+	 * @author 岡部-Task.26
 	 * @param minute
 	 * @return DBのデータが入っているDTOから抜き出した出勤、または退勤時間時間の分数
 	 */	
