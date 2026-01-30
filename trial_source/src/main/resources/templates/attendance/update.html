@@ -75,7 +75,7 @@
 									<!-- 岡部遥-Task.26-出勤時間手入力フォームからプルダウンにて分数のみの登録フォームへ修正 -->
 									<select th:name="|attendanceList[${stat.index}].trainingStartTimeMinute|"  class="form-control">										
 										<option th:each="trainingStartTimeMinute:${attendanceForm.minuteMap}" th:value="${trainingStartTimeMinute.key}" th:inlne="text"class="form-control"
-										th:selected="${trainingStartTimeMinute.key == dailyAttendanceForm.trainingStartTimeHour}">
+										th:selected="${trainingStartTimeMinute.key == dailyAttendanceForm.trainingStartTimeMinute}">
 											[[${trainingStartTimeMinute.value}]]
 										</option>
 									</select>
